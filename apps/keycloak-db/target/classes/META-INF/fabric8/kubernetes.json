@@ -1,0 +1,171 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "List",
+  "items" : [ {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak-db"
+      },
+      "labels" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "postgres",
+        "port" : 5432,
+        "protocol" : "TCP",
+        "targetPort" : 5432
+      } ],
+      "selector" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "type" : "ClusterIP"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "PersistentVolumeClaim",
+    "metadata" : {
+      "labels" : {
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db-postgresql-data"
+    },
+    "spec" : {
+      "accessModes" : [ "ReadWriteOnce" ],
+      "resources" : {
+        "requests" : {
+          "storage" : "1Gi"
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak-db&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak-db",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "keycloak-db",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak-db&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+            "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak-db",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak-db",
+            "fabric8.io/scm-tag" : "app-console-2.0.1",
+            "pod.alpha.kubernetes.io/init-containers" : "[{\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"fmp-volume-permission\",\"command\":[\"chmod\",\"777\",\"/var/lib/pgsql\"],\"volumeMounts\":[{\"mountPath\":\"/var/lib/pgsql\",\"name\":\"keycloak-db-postgresql-data\"}]}]"
+          },
+          "labels" : {
+            "service" : "keycloak-db",
+            "app" : "keycloak-db",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "env" : [ {
+              "name" : "POSTGRESQL_DATABASE",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRESQL_PASSWORD",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRESQL_USER",
+              "value" : "keycloak"
+            }, {
+              "name" : "POD_IP",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "status.podIP"
+                }
+              }
+            } ],
+            "image" : "registry.centos.org/postgresql/postgresql:9.6",
+            "imagePullPolicy" : "IfNotPresent",
+            "livenessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "failureThreshold" : 6,
+              "initialDelaySeconds" : 60,
+              "timeoutSeconds" : 5
+            },
+            "name" : "keycloak-db",
+            "ports" : [ {
+              "containerPort" : 5432,
+              "name" : "postgresql",
+              "protocol" : "TCP"
+            } ],
+            "readinessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "initialDelaySeconds" : 20,
+              "periodSeconds" : 5,
+              "timeoutSeconds" : 3
+            },
+            "volumeMounts" : [ {
+              "mountPath" : "/var/lib/pgsql",
+              "name" : "keycloak-db-postgresql-data",
+              "readOnly" : false
+            } ]
+          } ],
+          "volumes" : [ {
+            "name" : "keycloak-db-postgresql-data",
+            "persistentVolumeClaim" : {
+              "claimName" : "keycloak-db-postgresql-data"
+            }
+          } ]
+        }
+      }
+    }
+  } ]
+}

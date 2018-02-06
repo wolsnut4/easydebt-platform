@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    fabric8.io/git-commit: c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a
+    fabric8.io/git-branch: master
+    fabric8.io/scm-con-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db
+    fabric8.io/scm-devcon-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db
+    fabric8.io/scm-tag: app-console-2.0.1
+    fabric8.io/scm-url: http://github.com/clarksnut/clarksnut-platform/apps/keycloak-db
+  labels:
+    service: keycloak-db
+    app: keycloak-db
+    provider: fabric8
+    version: 1.0-SNAPSHOT
+    group: io.clarksnut.platform.apps
+  name: keycloak-db
+spec:
+  ports:
+  - name: postgres
+    port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    service: keycloak-db
+    app: keycloak-db
+    provider: fabric8
+    group: io.clarksnut.platform.apps
+  type: ClusterIP

@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Route
+metadata:
+  annotations:
+    fabric8.io/target-platform: openshift
+    service.alpha.openshift.io/dependencies: '[{"name":"keycloak-db","namespace":"","kind":"Service"}]'
+  labels:
+    expose: "true"
+    app: keycloak
+    provider: fabric8
+    version: 1.0-SNAPSHOT
+    group: io.clarksnut.platform.apps
+  name: sso
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: sso

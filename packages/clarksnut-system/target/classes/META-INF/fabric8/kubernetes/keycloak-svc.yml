@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.alpha.openshift.io/dependencies: '[{"name":"keycloak-db","namespace":"","kind":"Service"}]'
+    fabric8.io/git-commit: c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a
+    fabric8.io/git-branch: master
+    fabric8.io/scm-con-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak
+    fabric8.io/scm-devcon-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak
+    fabric8.io/scm-tag: app-console-2.0.1
+    fabric8.io/scm-url: http://github.com/clarksnut/clarksnut-platform/apps/keycloak
+  labels:
+    expose: "true"
+    app: keycloak
+    provider: fabric8
+    version: 1.0-SNAPSHOT
+    group: io.clarksnut.platform.apps
+  name: keycloak
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: keycloak
+    provider: fabric8
+    group: io.clarksnut.platform.apps

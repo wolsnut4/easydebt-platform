@@ -1,0 +1,977 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "List",
+  "items" : [ {
+    "apiVersion" : "v1",
+    "kind" : "Secret",
+    "metadata" : {
+      "labels" : {
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut"
+    },
+    "data" : {
+      "db.user" : "cG9zdGdyZXM=",
+      "db.password" : "bXlzZWNyZXRwYXNzd29yZA==",
+      "db.admin.password" : "bXlzZWNyZXRwYXNzd29yZA==",
+      "keycloak.realm" : "Y2xhcmtzbnV0",
+      "keycloak.secret" : "Yjc4NzNmODAtNmFkNy00NGE1LTk3Y2ItYmQyMTA3ODllYjQx",
+      "token.publickey" : "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlHZU1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTUFEQ0JpQUtCZ0VqbFpOMVE3d2c1UU9IelhHcXlOZi9xL1ZIUTBvSjJOZGVPRHMxOHh1WkpHSkxEZVA4ZU5QY2trbGdWb1RJaFZzOTlaNXRMTTFoUCs5R213ODI1dVVXRnZsNHg1MGoyYW0yNUFIOGlpUGhreUw2aEx6dThzYnd3clU5R1RpcllqRVM5RlNRVWF6TmlWMVhYSGR5TGRvRm03dzMzZDVobFdpT1M4NmNmRnNGN0FnTUJBQUU9Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo="
+    },
+    "type" : "Opaque"
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Secret",
+    "metadata" : {
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "data" : {
+      "kc.user" : "YWRtaW4K",
+      "kc.password" : "YWRtaW4K",
+      "kc.clientid.secret" : "Yjc4NzNmODAtNmFkNy00NGE1LTk3Y2ItYmQyMTA3ODllYjQx",
+      "kc.private.key" : "TUlJQ1dnSUJBQUtCZ0VqbFpOMVE3d2c1UU9IelhHcXlOZi9xL1ZIUTBvSjJOZGVPRHMxOHh1WkpHSkxEZVA4ZU5QY2trbGdWb1RJaFZzOTlaNXRMTTFoUCs5R213ODI1dVVXRnZsNHg1MGoyYW0yNUFIOGlpUGhreUw2aEx6dThzYnd3clU5R1RpcllqRVM5RlNRVWF6TmlWMVhYSGR5TGRvRm03dzMzZDVobFdpT1M4NmNmRnNGN0FnTUJBQUVDZ1lBUE5NTDRvOVJwQzhCc0lkN3FadWg2elNNd3VQWGd2eFgyTkMwRVVuNFBOYnBKaXpzblJMN1p1eWhIOWFNZG1QVEo3YWY2TGhLMDNtSnlWbTVMOE8wanlYQ2JzaWdkTVUxSDF4UmZiZ1JOUTViRHpHZUJzYTlFSHlpa2dDbkVTNXRZcFVKQnRzNjdKOVNYTU56VTFDckliM2JPQUhsaXp2aWozaE9KS0plQWlRSkJBSkJzVEd2VmtYZzFTZ0l2bk42dXlIU0h3V0hLaVhFOVdCQ1VQTkZrMklyNmtDYUlEeTB4MHlHbklBcVA3SmdJeE1lR0M1Njl4VmZEcEYvZnIyaTFvQjhDUVFDQk5xSTF3TlZvczVlTGhKcXdGNThLWURLbWZlRjY2QkJXblBJQ01UMFVaL1lCTFc1UlRCbzUvVDlnemxLQk1LUmVRanp6K1ZaQ0F2cHdhb09FUWNNbEFrQnFyc1VvNXVNRk5BQU9hMU5xbnh2T0VMWUY0ZEh6UjBnMVB2dEtCajk3TWltbmZOd1JHM3dGb09tblE3ZVdldXU1STBpVUkwU1NWeCtsL3BzWk13a3JBa0JBTDQ1Mld6cm5qc2JKNUc0ZTZTejByNEtabDlCcENGd05XbHNSWWJvd3A4L1pGK05EK1NUU0I0M3pIYXA0U0Z4dUFrTmJBbEdwNnViUzd1WXp6YU1OQWtCRFRvSXQxL1FHUExBM2JaVzV1YTdLZ3VtdzFtMjF5Y1BmdUFkYklpclhMdE16SGR3dXFuQkFMbElJOXBFZU4xTEttNzR1cGswZDluTitxS05lT2RQSA==",
+      "kc.public.key" : "TUlHZU1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTUFEQ0JpQUtCZ0VqbFpOMVE3d2c1UU9IelhHcXlOZi9xL1ZIUTBvSjJOZGVPRHMxOHh1WkpHSkxEZVA4ZU5QY2trbGdWb1RJaFZzOTlaNXRMTTFoUCs5R213ODI1dVVXRnZsNHg1MGoyYW0yNUFIOGlpUGhreUw2aEx6dThzYnd3clU5R1RpcllqRVM5RlNRVWF6TmlWMVhYSGR5TGRvRm03dzMzZDVobFdpT1M4NmNmRnNGN0FnTUJBQUU9"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "api.service.kubernetes.io/path" : "/api/",
+        "service.alpha.openshift.io/dependencies" : "[{\"name\":\"clarksnut-db\",\"namespace\":\"\",\"kind\":\"Service\"}]",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut"
+      },
+      "labels" : {
+        "service" : "api",
+        "expose" : "true",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "api"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "8080",
+        "port" : 80,
+        "protocol" : "TCP",
+        "targetPort" : 8080
+      } ],
+      "selector" : {
+        "service" : "clarksnut",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "type" : "ClusterIP"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "api.service.kubernetes.io/path" : "/api/",
+        "service.alpha.openshift.io/dependencies" : "[{\"name\":\"clarksnut-db\",\"namespace\":\"\",\"kind\":\"Service\"}]",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut"
+      },
+      "labels" : {
+        "service" : "clarksnut",
+        "expose" : "true",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "8080",
+        "port" : 80,
+        "protocol" : "TCP",
+        "targetPort" : 8080
+      } ],
+      "selector" : {
+        "service" : "clarksnut",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "type" : "ClusterIP"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut"
+      },
+      "labels" : {
+        "service" : "clarksnut-db",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut-db"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "postgres",
+        "port" : 5432,
+        "protocol" : "TCP",
+        "targetPort" : 5432
+      } ],
+      "selector" : {
+        "service" : "clarksnut-db",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "type" : "ClusterIP"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "service.alpha.openshift.io/dependencies" : "[{\"name\":\"keycloak-db\",\"namespace\":\"\",\"kind\":\"Service\"}]",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak"
+      },
+      "labels" : {
+        "expose" : "true",
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "http",
+        "port" : 80,
+        "protocol" : "TCP",
+        "targetPort" : 8080
+      } ],
+      "selector" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      }
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak-db"
+      },
+      "labels" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "postgres",
+        "port" : 5432,
+        "protocol" : "TCP",
+        "targetPort" : 5432
+      } ],
+      "selector" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "type" : "ClusterIP"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "PersistentVolumeClaim",
+    "metadata" : {
+      "labels" : {
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut-postgresql-data"
+    },
+    "spec" : {
+      "accessModes" : [ "ReadWriteOnce" ],
+      "resources" : {
+        "requests" : {
+          "storage" : "1Gi"
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "PersistentVolumeClaim",
+    "metadata" : {
+      "labels" : {
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db-postgresql-data"
+    },
+    "spec" : {
+      "accessModes" : [ "ReadWriteOnce" ],
+      "resources" : {
+        "requests" : {
+          "storage" : "1Gi"
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "ConfigMap",
+    "metadata" : {
+      "annotations" : {
+        "expose.service-key.config.fabric8.io/keycloak" : "keycloak.url",
+        "expose-no-path.service-key.config.fabric8.io/auth" : "auth.url"
+      },
+      "labels" : {
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut"
+    },
+    "data" : {
+      "db.host" : "clarksnut-db",
+      "db.port" : "5432",
+      "db.database" : "clarksnut",
+      "keycloak.url" : "http://keycloak",
+      "postgres.connection.maxidle" : "90",
+      "postgres.connection.maxopen" : "90",
+      "postgres.sslmode" : "disable",
+      "keycloak.json" : "{\n  \"realm\": \"${CN_KEYCLOAK_REALM}\",\n  \"auth-server-url\": \"${CN_KEYCLOAK_URL}\",\n  \"resource\": \"clarksnut\",\n  \"ssl-required\": \"external\",\n  \"credentials\": {\n    \"secret\": \"${CN_KEYCLOAK_SECRET}\"\n  },\n  \"bearer-only\": true,\n  \"enable-cors\": true\n}",
+      "clarksnut-config.yml" : "project:\n  stage: custom\nswarm:\n  datasources:\n    data-sources:\n      ClarksnutDS:\n        jndi-name: java:jboss/datasources/ClarksnutDS\n        driver-name: postgresql\n        user-name: ${CN_POSTGRES_USER}\n        password: ${CN_POSTGRES_PASSWORD}\n        connection-url: jdbc:postgresql://${CN_POSTGRES_HOST}:${CN_POSTGRES_PORT}/${CN_POSTGRES_DATABASE}"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "ConfigMap",
+    "metadata" : {
+      "labels" : {
+        "fabric8.io/kind" : "package",
+        "provider" : "fabric8.io",
+        "version" : "1.0-SNAPSHOT",
+        "app" : "clarksnut-system",
+        "group" : "io.clarksnut.platform.packages"
+      },
+      "name" : "clarksnut-system"
+    },
+    "data" : {
+      "metadata-url" : "http://central.maven.org/maven2/io/clarksnut/platform/packages/clarksnut-system/maven-metadata.xml",
+      "package-url-prefix" : "http://central.maven.org/maven2/io/clarksnut/platform/packages/clarksnut-system/%[1]s/clarksnut-system-%[1]s-"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "ConfigMap",
+    "metadata" : {
+      "annotations" : {
+        "expose.config.fabric8.io/apiserver-url-key" : "apiserver.url",
+        "expose.service-key.config.fabric8.io/clarksnutui" : "clarksnutui.url",
+        "expose.service-key.config.fabric8.io/keycloak" : "keycloak.url",
+        "expose.service-key.config.fabric8.io/jenkins" : "jenkins.url",
+        "expose-full.service-key.config.fabric8.io/clarksnut" : "clarksnut.api.url",
+        "expose-no-path.service-key.config.fabric8.io/auth" : "auth.url"
+      },
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "data" : {
+      "db.url" : "keycloak-db",
+      "db.port" : "5432",
+      "apiserver.url" : "http://kubernetes",
+      "clarksnutui.url" : "http://clarksnutui",
+      "jenkins.url" : "http://jenkins",
+      "keycloak.url" : "http://keycloak",
+      "auth.api.url" : "http://auth",
+      "clarksnut.api.url" : "http://clarksnut",
+      "clarksnut-realm.json" : "{\n  \"realm\": \"clarksnut\",\n  \"enabled\": true,\n  \"loginTheme\": \"clarksnut\",\n  \"privateKey\": \"${KEYCLOAK_PRIVATEKEY}\",\n  \"publicKey\": \"${KEYCLOAK_PUBLICKEY}\",\n  \"sslRequired\": \"external\",\n  \"accessTokenLifespan\": 2592000,\n  \"accessTokenLifespanForImplicitFlow\": 1296000,\n  \"ssoSessionIdleTimeout\": 2592000,\n  \"accessCodeLifespanUserAction\": 36000,\n  \"accessCodeLifespanLogin\": 2592000,\n  \"ssoSessionMaxLifespan\": 2592000,\n  \"offlineSessionIdleTimeout\": 2592000,\n  \"accessCodeLifespan\": 60,\n  \"clients\": [\n    {\n      \"clientId\": \"clarksnut-online-platform\",\n      \"enabled\": true,\n      \"standardFlowEnabled\": true,\n      \"implicitFlowEnabled\": false,\n      \"directAccessGrantsEnabled\": true,\n      \"authorizationServicesEnabled\": true,\n      \"fullScopeAllowed\": true,\n      \"serviceAccountsEnabled\": true,\n      \"clientAuthenticatorType\": \"client-secret\",\n      \"secret\": \"${KEYCLOAK_CLIENTID_SECRET}\",\n      \"publicClient\": true,\n      \"adminUrl\": \"\",\n      \"baseUrl\": \"\",\n      \"redirectUris\": [\n        \"http://localhost:8080/api/login/*\",\n        \"${AUTH_URL}*\",\n        \"${CLARKSNUT_URL}*\",\n        \"${JENKINS_URL}/securityRealm/finishLogin\",\n        \"${KEYCLOAK_URL}/*\"\n      ],\n      \"webOrigins\": [\n        \"*\"\n      ],\n      \"defaultRoles\": [\n        \"uma_protection\"\n      ],\n      \"authorizationSettings\": {\n        \"allowRemoteResourceManagement\": true,\n        \"policyEnforcementMode\": \"ENFORCING\",\n        \"scopes\": [\n          {\n            \"name\": \"user\"\n          },\n          {\n            \"name\": \"admin\"\n          }\n        ]\n      },\n      \"protocolMappers\": [\n        {\n          \"id\": \"0dc3e03b-f0c3-4e7e-b0c9-d99c46ba9161\",\n          \"name\": \"Approved\",\n          \"protocol\": \"openid-connect\",\n          \"protocolMapper\": \"oidc-usermodel-attribute-mapper\",\n          \"consentRequired\": false,\n          \"config\": {\n            \"userinfo.token.claim\": \"true\",\n            \"user.attribute\": \"approved\",\n            \"id.token.claim\": \"false\",\n            \"access.token.claim\": \"true\",\n            \"claim.name\": \"approved\",\n            \"jsonType.label\": \"boolean\"\n          }\n        },\n        {\n          \"id\" : \"5f949838-20b6-4544-998c-96d066298b3d\",\n          \"name\" : \"email\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${email}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"email\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"email\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"7bd87e1c-76a7-4856-ab58-a49d15ccdad8\",\n          \"name\" : \"given name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${givenName}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"firstName\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"given_name\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"fd7a276f-12bf-4cb9-86a5-d91dd00518e7\",\n          \"name\" : \"username\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${username}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"username\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"preferred_username\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"a7fd0801-be94-4540-af9f-45f0f8914224\",\n          \"name\" : \"role list\",\n          \"protocol\" : \"saml\",\n          \"protocolMapper\" : \"saml-role-list-mapper\",\n          \"consentRequired\" : false,\n          \"config\" : {\n            \"single\" : \"false\",\n            \"attribute.nameformat\" : \"Basic\",\n            \"attribute.name\" : \"Role\"\n          }\n        }, {\n          \"id\" : \"fbf2ac93-fb3b-4e15-afc8-585e5e8e1049\",\n          \"name\" : \"full name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-full-name-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${fullName}\",\n          \"config\" : {\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"userinfo.token.claim\" : \"true\"\n          }\n        }, {\n          \"id\" : \"3d6c2c1f-f048-45b1-b1cf-a0774397ad7f\",\n          \"name\" : \"Client IP Address\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientAddress\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientAddress\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"57ec513a-aa97-46b8-b888-4c2f9197d6db\",\n          \"name\" : \"family name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${familyName}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"lastName\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"family_name\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"bdc1ad99-471f-4c83-aa2e-03fbcf620954\",\n          \"name\" : \"Client ID\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientId\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientId\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"1fa76490-354b-4b62-a6d0-b767a165d2a1\",\n          \"name\" : \"Client Host\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientHost\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientHost\",\n            \"jsonType.label\" : \"String\"\n          }\n        }\n      ]\n    },\n    {\n      \"clientId\": \"che\",\n      \"enabled\": true,\n      \"redirectUris\": [\n        \"*\"\n      ],\n      \"implicitFlowEnabled\": false,\n      \"directAccessGrantsEnabled\": true,\n      \"publicClient\": true,\n      \"protocol\": \"openid-connect\",\n      \"fullScopeAllowed\": true\n    }\n  ],\n  \"users\": [\n    {\n      \"username\": \"service-account-clarksnut-online-platform\",\n      \"enabled\": true,\n      \"totp\": false,\n      \"emailVerified\": false,\n      \"email\": \"service-account-clarksnut-online-platform@placeholder.org\",\n      \"serviceAccountClientId\": \"clarksnut-online-platform\",\n      \"credentials\": [],\n      \"disableableCredentialTypes\": [],\n      \"requiredActions\": [],\n      \"realmRoles\": [\n        \"offline_access\",\n        \"uma_authorization\"\n      ],\n      \"clientRoles\": {\n        \"realm-management\": [\n          \"view-users\",\n          \"manage-authorization\"\n        ],\n        \"broker\": [\n          \"read-token\"\n        ],\n        \"clarksnut-online-platform\": [\n          \"uma_protection\"\n        ],\n        \"account\": [\n          \"manage-account\",\n          \"view-profile\"\n        ]\n      },\n      \"groups\": []\n    }\n  ],\n  \"clientScopeMappings\": {\n    \"realm-management\": [\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"view-users\"\n        ]\n      },\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"manage-authorization\"\n        ]\n      }\n    ],\n    \"broker\": [\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"read-token\"\n        ]\n      }\n    ]\n  },\n  \"roles\": {\n    \"realm\": [\n      {\n        \"name\": \"user\",\n        \"description\": \"Read space\"\n      },\n      {\n        \"name\": \"admin\",\n        \"description\": \"Admin space\"\n      }\n    ]\n  },\n  \"identityProviders\": [\n    {\n      \"alias\": \"google\",\n      \"providerId\": \"google\",\n      \"enabled\": true,\n      \"updateProfileFirstLogin\": \"true\",\n      \"storeToken\": \"true\",\n      \"trustEmail\": true,\n      \"addReadTokenRoleOnCreate\": true,\n      \"config\": {\n        \"hideOnLoginPage\": \"${HIDE_GOOGLE_BTN}\",\n        \"clientSecret\": \"${GOOGLE_OAUTH_CLIENT_SECRET}\",\n        \"clientId\": \"${GOOGLE_OAUTH_CLIENT_ID}\",\n        \"defaultScope\": \"openid profile email https://www.googleapis.com/auth/gmail.readonly\",\n        \"useJwksUrl\": \"true\"\n      }\n    }\n  ],\n  \"identityProviderMappers\": [\n    {\n      \"name\": \"approved\",\n      \"identityProviderAlias\": \"google\",\n      \"identityProviderMapper\": \"hardcoded-attribute-idp-mapper\",\n      \"config\": {\n        \"attribute.value\": \"true\",\n        \"attribute\": \"approved\"\n      }\n    }\n  ]\n}"
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "configmap.fabric8.io/update-on-change" : "clarksnut",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "service" : "clarksnut",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "clarksnut",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+            "pod.beta.kubernetes.io/init-containers" : "[\n{\n  \"name\": \"envvar-substitution\",\n  \"image\": \"fabric8/envsubst-file:1.0.2\",\n  \"imagePullPolicy\": \"IfNotPresent\",\n  \"args\": [\n    \"keycloak.json\",\n    \"clarksnut-stages.yml\"\n  ],\n  \"env\": [\n    {\n      \"name\": \"CN_KEYCLOAK_REALM\"\n    },\n    {\n      \"name\": \"CN_KEYCLOAK_URL\"\n    },\n    {\n      \"name\": \"CN_KEYCLOAK_SECRET\"\n    },\n    {\n      \"name\": \"CN_POSTGRES_USER\"\n    },\n    {\n      \"name\": \"CN_POSTGRES_PASSWORD\"\n    },\n    {\n      \"name\": \"CN_POSTGRES_HOST\"\n    },\n    {\n      \"name\": \"CN_POSTGRES_PORT\"\n    },\n    {\n      \"name\": \"CN_POSTGRES_DATABASE\"\n    }\n  ],\n  \"volumeMounts\": [\n    {\n      \"name\": \"clarksnut-keycloak-config\",\n      \"mountPath\": \"/workdir/keycloak.json\",\n      \"subPath\": \"config/keycloak.json\"\n    },\n    {\n      \"name\": \"clarksnut-stage-config\",\n      \"mountPath\": \"/workdir/clarksnut-stages.yml\",\n      \"subPath\": \"config/clarksnut-stages.yml\"\n    },\n    {\n      \"name\": \"clarksnut-subst-config\",\n      \"mountPath\": \"/processed\"\n    }\n  ]\n},\n{\n  \"name\": \"wait-for-clarksnut-db\",\n  \"image\": \"fabric8/fabric8-dependency-wait-service:v6632df1\",\n  \"imagePullPolicy\": \"IfNotPresent\",\n  \"command\": [\"sh\", \"-c\", \"fabric8-dependency-wait-service-linux-amd64 postgres://clarksnut@clarksnut-db:5432\"],\n  \"env\": [{\n    \"name\": \"DEPENDENCY_POLL_INTERVAL\",\n    \"value\": \"1\"\n  }, {\n    \"name\": \"DEPENDENCY_LOG_VERBOSE\",\n    \"value\": \"true\"\n  }]\n},\n{\n  \"name\": \"wait-for-keycloak\",\n  \"image\": \"fabric8/fabric8-dependency-wait-service:v6632df1\",\n  \"imagePullPolicy\": \"IfNotPresent\",\n  \"command\": [\"sh\", \"-c\", \"fabric8-dependency-wait-service-linux-amd64 http://keycloak:80\"],\n  \"env\": [{\n    \"name\": \"DEPENDENCY_POLL_INTERVAL\",\n    \"value\": \"1\"\n  }, {\n    \"name\": \"DEPENDENCY_LOG_VERBOSE\",\n    \"value\": \"true\"\n  }]\n}]",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+            "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut",
+            "configmap.fabric8.io/update-on-change" : "clarksnut",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+            "fabric8.io/scm-tag" : "app-console-2.0.1",
+            "maven.fabric8.io/source-url" : "jar:file:/home/admin/git/clarksnut-platform/apps/clarksnut/target/clarksnut-1.0-SNAPSHOT.jar!/META-INF/fabric8/kubernetes.yml",
+            "fabric8.io/service-dependencies" : "clarksnut-db,keycloak"
+          },
+          "labels" : {
+            "service" : "clarksnut",
+            "app" : "clarksnut",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "env" : [ {
+              "name" : "KUBERNETES_NAMESPACE",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "metadata.namespace"
+                }
+              }
+            }, {
+              "name" : "JAVA_APP_DIR",
+              "value" : "/deployments"
+            }, {
+              "name" : "JAVA_OPTIONS",
+              "value" : "-Dswarm.project.stage.file=file:///deployments/config/clarksnut-stages.yml -Dswarm.keycloak.json.path=/deployments/config/keycloak.json -Dswarm.project.stage=custom"
+            }, {
+              "name" : "CN_HIBERNATE_STRATEGY",
+              "value" : "update"
+            }, {
+              "name" : "CN_HIBERNATE_SHOW_SQL",
+              "value" : "false"
+            }, {
+              "name" : "CN_HIBERNATE_FORMAT_SQL",
+              "value" : "false"
+            }, {
+              "name" : "CN_HIBERNATE_SECOND_LEVEL_CACHE",
+              "value" : "true"
+            }, {
+              "name" : "CN_HIBERNATE_INDEX_MANAGER",
+              "value" : "directory-based"
+            }, {
+              "name" : "CN_POSTGRES_USER",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "db.user",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_PASSWORD",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "db.password",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_KEYCLOAK_REALM",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "keycloak.realm",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_KEYCLOAK_URL",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "keycloak.url",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_KEYCLOAK_SECRET",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "keycloak.secret",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_HOST",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "db.host",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_PORT",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "db.port",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_DATABASE",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "db.database",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_SSLMODE",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "postgres.sslmode",
+                  "name" : "CN"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_CONNECTION_MAXIDLE",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "postgres.connection.maxidle",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "CN_POSTGRES_CONNECTION_MAXOPEN",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "key" : "postgres.connection.maxopen",
+                  "name" : "clarksnut"
+                }
+              }
+            } ],
+            "image" : "clarksnut/clarksnut:latest",
+            "imagePullPolicy" : "IfNotPresent",
+            "livenessProbe" : {
+              "failureThreshold" : 3,
+              "httpGet" : {
+                "path" : "/api/status",
+                "port" : 8080,
+                "scheme" : "HTTP"
+              },
+              "initialDelaySeconds" : 20,
+              "periodSeconds" : 10,
+              "successThreshold" : 1,
+              "timeoutSeconds" : 1
+            },
+            "name" : "clarksnut",
+            "ports" : [ {
+              "containerPort" : 8080,
+              "name" : "http",
+              "protocol" : "TCP"
+            } ],
+            "readinessProbe" : {
+              "failureThreshold" : 3,
+              "httpGet" : {
+                "path" : "/api/status",
+                "port" : 8080,
+                "scheme" : "HTTP"
+              },
+              "initialDelaySeconds" : 20,
+              "periodSeconds" : 10,
+              "successThreshold" : 1,
+              "timeoutSeconds" : 1
+            }
+          } ]
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "configmap.fabric8.io/update-on-change" : "clarksnut",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "service" : "clarksnut-db",
+        "app" : "clarksnut",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "clarksnut-db"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "clarksnut",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+            "pod.alpha.kubernetes.io/init-containers" : "[{\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"fmp-volume-permission\",\"command\":[\"chmod\",\"777\",\"/var/lib/pgsql\"],\"volumeMounts\":[{\"mountPath\":\"/var/lib/pgsql\",\"name\":\"clarksnut-postgresql-data\"}]}]",
+            "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/clarksnut",
+            "configmap.fabric8.io/update-on-change" : "clarksnut",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut",
+            "fabric8.io/scm-tag" : "app-console-2.0.1",
+            "maven.fabric8.io/source-url" : "jar:file:/home/admin/git/clarksnut-platform/apps/clarksnut/target/clarksnut-1.0-SNAPSHOT.jar!/META-INF/fabric8/kubernetes.yml"
+          },
+          "labels" : {
+            "service" : "clarksnut-db",
+            "app" : "clarksnut",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "env" : [ {
+              "name" : "POSTGRESQL_DATABASE",
+              "valueFrom" : {
+                "configMapKeyRef" : {
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "POSTGRESQL_USER",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "db.user",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "POSTGRESQL_PASSWORD",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "db.password",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "POSTGRESQL_ADMIN_PASSWORD",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "db.admin.password",
+                  "name" : "clarksnut"
+                }
+              }
+            }, {
+              "name" : "POD_IP",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "status.podIP"
+                }
+              }
+            } ],
+            "image" : "registry.centos.org/postgresql/postgresql:9.6",
+            "imagePullPolicy" : "IfNotPresent",
+            "livenessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "failureThreshold" : 6,
+              "initialDelaySeconds" : 60,
+              "timeoutSeconds" : 5
+            },
+            "name" : "clarksnut-db",
+            "ports" : [ {
+              "containerPort" : 5432,
+              "name" : "postgresql",
+              "protocol" : "TCP"
+            } ],
+            "readinessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "initialDelaySeconds" : 20,
+              "periodSeconds" : 5,
+              "timeoutSeconds" : 3
+            },
+            "volumeMounts" : [ {
+              "mountPath" : "/var/lib/pgsql",
+              "name" : "clarksnut-postgresql-data",
+              "readOnly" : false
+            } ]
+          } ],
+          "volumes" : [ {
+            "name" : "clarksnut-postgresql-data",
+            "persistentVolumeClaim" : {
+              "claimName" : "clarksnut-postgresql-data"
+            }
+          } ]
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "configmap.fabric8.io/update-on-change" : "keycloak",
+        "fabric8.io/target-platform" : "kubernetes",
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "keycloak",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "strategy" : {
+        "type" : "Recreate"
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+            "pod.beta.kubernetes.io/init-containers" : "[\n{\n  \"name\": \"envvar-substitution\",\n  \"image\": \"fabric8/envsubst-file:1.0.0\",\n  \"imagePullPolicy\": \"IfNotPresent\",\n  \"args\": [\n    \"clarksnut-realm.json\"\n  ],\n  \"env\": [{\n    \"name\": \"AUTH_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"auth.api.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"CLARKSNUT_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"clarksnut.api.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"JENKINS_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"jenkins.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"keycloak.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"CLARKSNUTUI_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"clarksnutui.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_PRIVATEKEY\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.private.key\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_PUBLICKEY\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.public.key\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_CLIENTID_SECRET\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.clientid.secret\"\n            }\n        }\n  },\n  {\n    \"name\": \"K8S_API_SERVER\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"apiserver.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"HIDE_OPENSHIFT_BTN\",\n    \"value\": \"true\"\n  },\n  {\n    \"name\": \"HIDE_GITHUB_BTN\",\n    \"value\": \"false\"\n  }],\n  \"volumeMounts\": [\n  {\n    \"name\": \"keycloak-config\",\n    \"mountPath\": \"/workdir/clarksnut-realm.json\",\n    \"subPath\": \"config/clarksnut-realm.json\"\n  },\n  {\n    \"name\": \"keycloak-subst-config\",\n    \"mountPath\": \"/processed\"\n  }\n  ]\n},\n{\n    \"name\": \"init-dependencyservice\",\n    \"image\": \"fabric8/fabric8-dependency-wait-service:v6632df1\",\n    \"imagePullPolicy\": \"IfNotPresent\",\n    \"command\": [\"sh\", \"-c\", \"fabric8-dependency-wait-service-linux-amd64 postgres://keycloak@keycloak-db:5432\"],\n    \"env\": [{\n      \"name\": \"DEPENDENCY_POLL_INTERVAL\",\n      \"value\": \"1\"\n    }, {\n      \"name\": \"DEPENDENCY_LOG_VERBOSE\",\n      \"value\": \"true\"\n    }]\n}]",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+            "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak",
+            "configmap.fabric8.io/update-on-change" : "keycloak",
+            "fabric8.io/target-platform" : "kubernetes",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak",
+            "fabric8.io/scm-tag" : "app-console-2.0.1",
+            "maven.fabric8.io/source-url" : "jar:file:/home/admin/git/clarksnut-platform/apps/keycloak/target/keycloak-1.0-SNAPSHOT.jar!/META-INF/fabric8/kubernetes.yml"
+          },
+          "labels" : {
+            "app" : "keycloak",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "args" : [ "-b $(INTERNAL_POD_IP)", "-Djgroups.bind_addr=global", "-Djboss.node.name=$(INTERNAL_POD_IP)", "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=singleFile", "-Dkeycloak.migration.file=/opt/jboss/keycloak/standalone/configuration/import/clarksnut-realm.json", "-Dkeycloak.migration.strategy=IGNORE_EXISTING" ],
+            "env" : [ {
+              "name" : "POSTGRES_HOSTNAME",
+              "value" : "keycloak-db"
+            }, {
+              "name" : "POSTGRES_USER",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRES_PASSWORD",
+              "value" : "keycloak"
+            }, {
+              "name" : "OPERATING_MODE",
+              "value" : "standalone"
+            }, {
+              "name" : "POSTGRES_PORT_5432_TCP_ADDR",
+              "value" : "keycloak-db"
+            }, {
+              "name" : "INTERNAL_POD_IP",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "status.podIP"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_USER",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.user",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PASSWORD",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.password",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_CLIENTID_SECRET",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.clientid.secret",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PRIVATEKEY",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.private.key",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PUBLICKEY",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.public.key",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "HIDE_GOOGLE_BTN",
+              "value" : "false"
+            } ],
+            "image" : "fabric8/keycloak-postgres:v15751c8",
+            "livenessProbe" : {
+              "httpGet" : {
+                "path" : "/auth",
+                "port" : 8080
+              },
+              "initialDelaySeconds" : 60,
+              "timeoutSeconds" : 10
+            },
+            "name" : "keycloak",
+            "readinessProbe" : {
+              "httpGet" : {
+                "path" : "/auth",
+                "port" : 8080
+              },
+              "initialDelaySeconds" : 10,
+              "timeoutSeconds" : 10
+            },
+            "volumeMounts" : [ {
+              "mountPath" : "/opt/jboss/keycloak/standalone/configuration/import",
+              "name" : "keycloak-subst-config"
+            }, {
+              "mountPath" : "/opt/jboss/keycloak/themes/clarksnut",
+              "name" : "keycloak-theme"
+            } ]
+          } ],
+          "volumes" : [ {
+            "emptyDir" : { },
+            "name" : "keycloak-subst-config"
+          }, {
+            "configMap" : {
+              "items" : [ {
+                "key" : "clarksnut-realm.json",
+                "path" : "config/clarksnut-realm.json"
+              } ],
+              "name" : "keycloak"
+            },
+            "name" : "keycloak-config"
+          }, {
+            "gitRepo" : {
+              "directory" : "login",
+              "repository" : "https://github.com/clarksnut/clarksnut-keycloak-theme.git"
+            },
+            "name" : "keycloak-theme"
+          } ]
+        }
+      }
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak-db&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak-db",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "service" : "keycloak-db",
+        "app" : "keycloak-db",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak-db"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "keycloak-db",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak-db&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+            "pod.alpha.kubernetes.io/init-containers" : "[{\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"fmp-volume-permission\",\"command\":[\"chmod\",\"777\",\"/var/lib/pgsql\"],\"volumeMounts\":[{\"mountPath\":\"/var/lib/pgsql\",\"name\":\"keycloak-db-postgresql-data\"}]}]",
+            "fabric8.io/scm-url" : "http://github.com/clarksnut/clarksnut-platform/apps/keycloak-db",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/keycloak-db",
+            "fabric8.io/scm-tag" : "app-console-2.0.1",
+            "maven.fabric8.io/source-url" : "jar:file:/home/admin/git/clarksnut-platform/apps/keycloak-db/target/keycloak-db-1.0-SNAPSHOT.jar!/META-INF/fabric8/kubernetes.yml"
+          },
+          "labels" : {
+            "service" : "keycloak-db",
+            "app" : "keycloak-db",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "env" : [ {
+              "name" : "POSTGRESQL_DATABASE",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRESQL_PASSWORD",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRESQL_USER",
+              "value" : "keycloak"
+            }, {
+              "name" : "POD_IP",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "status.podIP"
+                }
+              }
+            } ],
+            "image" : "registry.centos.org/postgresql/postgresql:9.6",
+            "imagePullPolicy" : "IfNotPresent",
+            "livenessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "failureThreshold" : 6,
+              "initialDelaySeconds" : 60,
+              "timeoutSeconds" : 5
+            },
+            "name" : "keycloak-db",
+            "ports" : [ {
+              "containerPort" : 5432,
+              "name" : "postgresql",
+              "protocol" : "TCP"
+            } ],
+            "readinessProbe" : {
+              "exec" : {
+                "command" : [ "sh", "-c", "exec pg_isready --host $POD_IP" ]
+              },
+              "initialDelaySeconds" : 20,
+              "periodSeconds" : 5,
+              "timeoutSeconds" : 3
+            },
+            "volumeMounts" : [ {
+              "mountPath" : "/var/lib/pgsql",
+              "name" : "keycloak-db-postgresql-data",
+              "readOnly" : false
+            } ]
+          } ],
+          "volumes" : [ {
+            "name" : "keycloak-db-postgresql-data",
+            "persistentVolumeClaim" : {
+              "claimName" : "keycloak-db-postgresql-data"
+            }
+          } ]
+        }
+      }
+    }
+  } ]
+}

@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: clarksnut
+    provider: fabric8
+    version: 1.0-SNAPSHOT
+    group: io.clarksnut.platform.apps
+  name: clarksnut-postgresql-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

@@ -1,0 +1,230 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    configmap.fabric8.io/update-on-change: clarksnut
+    fabric8.io/git-commit: c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a
+    fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT
+    fabric8.io/scm-con-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut
+    fabric8.io/scm-url: http://github.com/clarksnut/clarksnut-platform/apps/clarksnut
+    fabric8.io/git-branch: master
+    fabric8.io/scm-devcon-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut
+    fabric8.io/scm-tag: app-console-2.0.1
+  labels:
+    service: clarksnut
+    app: clarksnut
+    provider: fabric8
+    version: 1.0-SNAPSHOT
+    group: io.clarksnut.platform.apps
+  name: clarksnut
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: clarksnut
+      provider: fabric8
+      group: io.clarksnut.platform.apps
+  template:
+    metadata:
+      annotations:
+        fabric8.io/git-commit: c0a681b2565e7710e8adb7f7ddd9ce4bcc0f037a
+        pod.beta.kubernetes.io/init-containers: |-
+          [
+          {
+            "name": "envvar-substitution",
+            "image": "fabric8/envsubst-file:1.0.2",
+            "imagePullPolicy": "IfNotPresent",
+            "args": [
+              "keycloak.json",
+              "clarksnut-stages.yml"
+            ],
+            "env": [
+              {
+                "name": "CN_KEYCLOAK_REALM"
+              },
+              {
+                "name": "CN_KEYCLOAK_URL"
+              },
+              {
+                "name": "CN_KEYCLOAK_SECRET"
+              },
+              {
+                "name": "CN_POSTGRES_USER"
+              },
+              {
+                "name": "CN_POSTGRES_PASSWORD"
+              },
+              {
+                "name": "CN_POSTGRES_HOST"
+              },
+              {
+                "name": "CN_POSTGRES_PORT"
+              },
+              {
+                "name": "CN_POSTGRES_DATABASE"
+              }
+            ],
+            "volumeMounts": [
+              {
+                "name": "clarksnut-keycloak-config",
+                "mountPath": "/workdir/keycloak.json",
+                "subPath": "config/keycloak.json"
+              },
+              {
+                "name": "clarksnut-stage-config",
+                "mountPath": "/workdir/clarksnut-stages.yml",
+                "subPath": "config/clarksnut-stages.yml"
+              },
+              {
+                "name": "clarksnut-subst-config",
+                "mountPath": "/processed"
+              }
+            ]
+          },
+          {
+            "name": "wait-for-clarksnut-db",
+            "image": "fabric8/fabric8-dependency-wait-service:v6632df1",
+            "imagePullPolicy": "IfNotPresent",
+            "command": ["sh", "-c", "fabric8-dependency-wait-service-linux-amd64 postgres://clarksnut@clarksnut-db:5432"],
+            "env": [{
+              "name": "DEPENDENCY_POLL_INTERVAL",
+              "value": "1"
+            }, {
+              "name": "DEPENDENCY_LOG_VERBOSE",
+              "value": "true"
+            }]
+          },
+          {
+            "name": "wait-for-keycloak",
+            "image": "fabric8/fabric8-dependency-wait-service:v6632df1",
+            "imagePullPolicy": "IfNotPresent",
+            "command": ["sh", "-c", "fabric8-dependency-wait-service-linux-amd64 http://keycloak:80"],
+            "env": [{
+              "name": "DEPENDENCY_POLL_INTERVAL",
+              "value": "1"
+            }, {
+              "name": "DEPENDENCY_LOG_VERBOSE",
+              "value": "true"
+            }]
+          }]
+        fabric8.io/metrics-path: dashboard/file/kubernetes-pods.json/?var-project=clarksnut&var-version=1.0-SNAPSHOT
+        fabric8.io/scm-con-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut
+        fabric8.io/scm-url: http://github.com/clarksnut/clarksnut-platform/apps/clarksnut
+        configmap.fabric8.io/update-on-change: clarksnut
+        fabric8.io/git-branch: master
+        fabric8.io/scm-devcon-url: scm:git:git@github.com:clarksnut/clarksnut-platform.git/apps/clarksnut
+        fabric8.io/scm-tag: app-console-2.0.1
+        maven.fabric8.io/source-url: jar:file:/home/admin/git/clarksnut-platform/apps/clarksnut/target/clarksnut-1.0-SNAPSHOT.jar!/META-INF/fabric8/kubernetes.yml
+        fabric8.io/service-dependencies: clarksnut-db,keycloak
+      labels:
+        service: clarksnut
+        app: clarksnut
+        provider: fabric8
+        version: 1.0-SNAPSHOT
+        group: io.clarksnut.platform.apps
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: JAVA_APP_DIR
+          value: /deployments
+        - name: JAVA_OPTIONS
+          value: -Dswarm.project.stage.file=file:///deployments/config/clarksnut-stages.yml
+            -Dswarm.keycloak.json.path=/deployments/config/keycloak.json -Dswarm.project.stage=custom
+        - name: CN_HIBERNATE_STRATEGY
+          value: update
+        - name: CN_HIBERNATE_SHOW_SQL
+          value: "false"
+        - name: CN_HIBERNATE_FORMAT_SQL
+          value: "false"
+        - name: CN_HIBERNATE_SECOND_LEVEL_CACHE
+          value: "true"
+        - name: CN_HIBERNATE_INDEX_MANAGER
+          value: directory-based
+        - name: CN_POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              key: db.user
+              name: clarksnut
+        - name: CN_POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: db.password
+              name: clarksnut
+        - name: CN_KEYCLOAK_REALM
+          valueFrom:
+            secretKeyRef:
+              key: keycloak.realm
+              name: clarksnut
+        - name: CN_KEYCLOAK_URL
+          valueFrom:
+            configMapKeyRef:
+              key: keycloak.url
+              name: clarksnut
+        - name: CN_KEYCLOAK_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: keycloak.secret
+              name: clarksnut
+        - name: CN_POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: db.host
+              name: clarksnut
+        - name: CN_POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: db.port
+              name: clarksnut
+        - name: CN_POSTGRES_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              key: db.database
+              name: clarksnut
+        - name: CN_POSTGRES_SSLMODE
+          valueFrom:
+            configMapKeyRef:
+              key: postgres.sslmode
+              name: CN
+        - name: CN_POSTGRES_CONNECTION_MAXIDLE
+          valueFrom:
+            configMapKeyRef:
+              key: postgres.connection.maxidle
+              name: clarksnut
+        - name: CN_POSTGRES_CONNECTION_MAXOPEN
+          valueFrom:
+            configMapKeyRef:
+              key: postgres.connection.maxopen
+              name: clarksnut
+        image: clarksnut/clarksnut:latest
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/status
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: clarksnut
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /api/status
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1

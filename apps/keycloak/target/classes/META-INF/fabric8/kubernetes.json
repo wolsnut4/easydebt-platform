@@ -1,0 +1,264 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "List",
+  "items" : [ {
+    "apiVersion" : "v1",
+    "kind" : "Secret",
+    "metadata" : {
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "data" : {
+      "kc.user" : "YWRtaW4K",
+      "kc.password" : "YWRtaW4K",
+      "kc.clientid.secret" : "Yjc4NzNmODAtNmFkNy00NGE1LTk3Y2ItYmQyMTA3ODllYjQx",
+      "kc.private.key" : "TUlJQ1dnSUJBQUtCZ0VqbFpOMVE3d2c1UU9IelhHcXlOZi9xL1ZIUTBvSjJOZGVPRHMxOHh1WkpHSkxEZVA4ZU5QY2trbGdWb1RJaFZzOTlaNXRMTTFoUCs5R213ODI1dVVXRnZsNHg1MGoyYW0yNUFIOGlpUGhreUw2aEx6dThzYnd3clU5R1RpcllqRVM5RlNRVWF6TmlWMVhYSGR5TGRvRm03dzMzZDVobFdpT1M4NmNmRnNGN0FnTUJBQUVDZ1lBUE5NTDRvOVJwQzhCc0lkN3FadWg2elNNd3VQWGd2eFgyTkMwRVVuNFBOYnBKaXpzblJMN1p1eWhIOWFNZG1QVEo3YWY2TGhLMDNtSnlWbTVMOE8wanlYQ2JzaWdkTVUxSDF4UmZiZ1JOUTViRHpHZUJzYTlFSHlpa2dDbkVTNXRZcFVKQnRzNjdKOVNYTU56VTFDckliM2JPQUhsaXp2aWozaE9KS0plQWlRSkJBSkJzVEd2VmtYZzFTZ0l2bk42dXlIU0h3V0hLaVhFOVdCQ1VQTkZrMklyNmtDYUlEeTB4MHlHbklBcVA3SmdJeE1lR0M1Njl4VmZEcEYvZnIyaTFvQjhDUVFDQk5xSTF3TlZvczVlTGhKcXdGNThLWURLbWZlRjY2QkJXblBJQ01UMFVaL1lCTFc1UlRCbzUvVDlnemxLQk1LUmVRanp6K1ZaQ0F2cHdhb09FUWNNbEFrQnFyc1VvNXVNRk5BQU9hMU5xbnh2T0VMWUY0ZEh6UjBnMVB2dEtCajk3TWltbmZOd1JHM3dGb09tblE3ZVdldXU1STBpVUkwU1NWeCtsL3BzWk13a3JBa0JBTDQ1Mld6cm5qc2JKNUc0ZTZTejByNEtabDlCcENGd05XbHNSWWJvd3A4L1pGK05EK1NUU0I0M3pIYXA0U0Z4dUFrTmJBbEdwNnViUzd1WXp6YU1OQWtCRFRvSXQxL1FHUExBM2JaVzV1YTdLZ3VtdzFtMjF5Y1BmdUFkYklpclhMdE16SGR3dXFuQkFMbElJOXBFZU4xTEttNzR1cGswZDluTitxS05lT2RQSA==",
+      "kc.public.key" : "TUlHZU1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTUFEQ0JpQUtCZ0VqbFpOMVE3d2c1UU9IelhHcXlOZi9xL1ZIUTBvSjJOZGVPRHMxOHh1WkpHSkxEZVA4ZU5QY2trbGdWb1RJaFZzOTlaNXRMTTFoUCs5R213ODI1dVVXRnZsNHg1MGoyYW0yNUFIOGlpUGhreUw2aEx6dThzYnd3clU5R1RpcllqRVM5RlNRVWF6TmlWMVhYSGR5TGRvRm03dzMzZDVobFdpT1M4NmNmRnNGN0FnTUJBQUU9"
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "Service",
+    "metadata" : {
+      "annotations" : {
+        "service.alpha.openshift.io/dependencies" : "[{\"name\":\"keycloak-db\",\"namespace\":\"\",\"kind\":\"Service\"}]",
+        "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+        "fabric8.io/scm-tag" : "app-console-2.0.1",
+        "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak"
+      },
+      "labels" : {
+        "expose" : "true",
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "spec" : {
+      "ports" : [ {
+        "name" : "http",
+        "port" : 80,
+        "protocol" : "TCP",
+        "targetPort" : 8080
+      } ],
+      "selector" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "group" : "io.clarksnut.platform.apps"
+      }
+    }
+  }, {
+    "apiVersion" : "v1",
+    "kind" : "ConfigMap",
+    "metadata" : {
+      "annotations" : {
+        "expose.config.fabric8.io/apiserver-url-key" : "apiserver.url",
+        "expose.service-key.config.fabric8.io/clarksnutui" : "clarksnutui.url",
+        "expose.service-key.config.fabric8.io/keycloak" : "keycloak.url",
+        "expose.service-key.config.fabric8.io/jenkins" : "jenkins.url",
+        "expose-full.service-key.config.fabric8.io/clarksnut" : "clarksnut.api.url",
+        "expose-no-path.service-key.config.fabric8.io/auth" : "auth.url"
+      },
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "data" : {
+      "db.url" : "keycloak-db",
+      "db.port" : "5432",
+      "apiserver.url" : "http://kubernetes",
+      "clarksnutui.url" : "http://clarksnutui",
+      "jenkins.url" : "http://jenkins",
+      "keycloak.url" : "http://keycloak",
+      "auth.api.url" : "http://auth",
+      "clarksnut.api.url" : "http://clarksnut",
+      "clarksnut-realm.json" : "{\n  \"realm\": \"clarksnut\",\n  \"enabled\": true,\n  \"loginTheme\": \"clarksnut\",\n  \"privateKey\": \"${KEYCLOAK_PRIVATEKEY}\",\n  \"publicKey\": \"${KEYCLOAK_PUBLICKEY}\",\n  \"sslRequired\": \"external\",\n  \"accessTokenLifespan\": 2592000,\n  \"accessTokenLifespanForImplicitFlow\": 1296000,\n  \"ssoSessionIdleTimeout\": 2592000,\n  \"accessCodeLifespanUserAction\": 36000,\n  \"accessCodeLifespanLogin\": 2592000,\n  \"ssoSessionMaxLifespan\": 2592000,\n  \"offlineSessionIdleTimeout\": 2592000,\n  \"accessCodeLifespan\": 60,\n  \"clients\": [\n    {\n      \"clientId\": \"clarksnut-online-platform\",\n      \"enabled\": true,\n      \"standardFlowEnabled\": true,\n      \"implicitFlowEnabled\": false,\n      \"directAccessGrantsEnabled\": true,\n      \"authorizationServicesEnabled\": true,\n      \"fullScopeAllowed\": true,\n      \"serviceAccountsEnabled\": true,\n      \"clientAuthenticatorType\": \"client-secret\",\n      \"secret\": \"${KEYCLOAK_CLIENTID_SECRET}\",\n      \"publicClient\": true,\n      \"adminUrl\": \"\",\n      \"baseUrl\": \"\",\n      \"redirectUris\": [\n        \"http://localhost:8080/api/login/*\",\n        \"${AUTH_URL}*\",\n        \"${CLARKSNUT_URL}*\",\n        \"${JENKINS_URL}/securityRealm/finishLogin\",\n        \"${KEYCLOAK_URL}/*\"\n      ],\n      \"webOrigins\": [\n        \"*\"\n      ],\n      \"defaultRoles\": [\n        \"uma_protection\"\n      ],\n      \"authorizationSettings\": {\n        \"allowRemoteResourceManagement\": true,\n        \"policyEnforcementMode\": \"ENFORCING\",\n        \"scopes\": [\n          {\n            \"name\": \"user\"\n          },\n          {\n            \"name\": \"admin\"\n          }\n        ]\n      },\n      \"protocolMappers\": [\n        {\n          \"id\": \"0dc3e03b-f0c3-4e7e-b0c9-d99c46ba9161\",\n          \"name\": \"Approved\",\n          \"protocol\": \"openid-connect\",\n          \"protocolMapper\": \"oidc-usermodel-attribute-mapper\",\n          \"consentRequired\": false,\n          \"config\": {\n            \"userinfo.token.claim\": \"true\",\n            \"user.attribute\": \"approved\",\n            \"id.token.claim\": \"false\",\n            \"access.token.claim\": \"true\",\n            \"claim.name\": \"approved\",\n            \"jsonType.label\": \"boolean\"\n          }\n        },\n        {\n          \"id\" : \"5f949838-20b6-4544-998c-96d066298b3d\",\n          \"name\" : \"email\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${email}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"email\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"email\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"7bd87e1c-76a7-4856-ab58-a49d15ccdad8\",\n          \"name\" : \"given name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${givenName}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"firstName\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"given_name\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"fd7a276f-12bf-4cb9-86a5-d91dd00518e7\",\n          \"name\" : \"username\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${username}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"username\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"preferred_username\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"a7fd0801-be94-4540-af9f-45f0f8914224\",\n          \"name\" : \"role list\",\n          \"protocol\" : \"saml\",\n          \"protocolMapper\" : \"saml-role-list-mapper\",\n          \"consentRequired\" : false,\n          \"config\" : {\n            \"single\" : \"false\",\n            \"attribute.nameformat\" : \"Basic\",\n            \"attribute.name\" : \"Role\"\n          }\n        }, {\n          \"id\" : \"fbf2ac93-fb3b-4e15-afc8-585e5e8e1049\",\n          \"name\" : \"full name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-full-name-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${fullName}\",\n          \"config\" : {\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"userinfo.token.claim\" : \"true\"\n          }\n        }, {\n          \"id\" : \"3d6c2c1f-f048-45b1-b1cf-a0774397ad7f\",\n          \"name\" : \"Client IP Address\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientAddress\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientAddress\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"57ec513a-aa97-46b8-b888-4c2f9197d6db\",\n          \"name\" : \"family name\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usermodel-property-mapper\",\n          \"consentRequired\" : true,\n          \"consentText\" : \"${familyName}\",\n          \"config\" : {\n            \"userinfo.token.claim\" : \"true\",\n            \"user.attribute\" : \"lastName\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"family_name\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"bdc1ad99-471f-4c83-aa2e-03fbcf620954\",\n          \"name\" : \"Client ID\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientId\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientId\",\n            \"jsonType.label\" : \"String\"\n          }\n        }, {\n          \"id\" : \"1fa76490-354b-4b62-a6d0-b767a165d2a1\",\n          \"name\" : \"Client Host\",\n          \"protocol\" : \"openid-connect\",\n          \"protocolMapper\" : \"oidc-usersessionmodel-note-mapper\",\n          \"consentRequired\" : false,\n          \"consentText\" : \"\",\n          \"config\" : {\n            \"user.session.note\" : \"clientHost\",\n            \"userinfo.token.claim\" : \"true\",\n            \"id.token.claim\" : \"true\",\n            \"access.token.claim\" : \"true\",\n            \"claim.name\" : \"clientHost\",\n            \"jsonType.label\" : \"String\"\n          }\n        }\n      ]\n    },\n    {\n      \"clientId\": \"che\",\n      \"enabled\": true,\n      \"redirectUris\": [\n        \"*\"\n      ],\n      \"implicitFlowEnabled\": false,\n      \"directAccessGrantsEnabled\": true,\n      \"publicClient\": true,\n      \"protocol\": \"openid-connect\",\n      \"fullScopeAllowed\": true\n    }\n  ],\n  \"users\": [\n    {\n      \"username\": \"service-account-clarksnut-online-platform\",\n      \"enabled\": true,\n      \"totp\": false,\n      \"emailVerified\": false,\n      \"email\": \"service-account-clarksnut-online-platform@placeholder.org\",\n      \"serviceAccountClientId\": \"clarksnut-online-platform\",\n      \"credentials\": [],\n      \"disableableCredentialTypes\": [],\n      \"requiredActions\": [],\n      \"realmRoles\": [\n        \"offline_access\",\n        \"uma_authorization\"\n      ],\n      \"clientRoles\": {\n        \"realm-management\": [\n          \"view-users\",\n          \"manage-authorization\"\n        ],\n        \"broker\": [\n          \"read-token\"\n        ],\n        \"clarksnut-online-platform\": [\n          \"uma_protection\"\n        ],\n        \"account\": [\n          \"manage-account\",\n          \"view-profile\"\n        ]\n      },\n      \"groups\": []\n    }\n  ],\n  \"clientScopeMappings\": {\n    \"realm-management\": [\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"view-users\"\n        ]\n      },\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"manage-authorization\"\n        ]\n      }\n    ],\n    \"broker\": [\n      {\n        \"client\": \"clarksnut-online-platform\",\n        \"roles\": [\n          \"read-token\"\n        ]\n      }\n    ]\n  },\n  \"roles\": {\n    \"realm\": [\n      {\n        \"name\": \"user\",\n        \"description\": \"Read space\"\n      },\n      {\n        \"name\": \"admin\",\n        \"description\": \"Admin space\"\n      }\n    ]\n  },\n  \"identityProviders\": [\n    {\n      \"alias\": \"google\",\n      \"providerId\": \"google\",\n      \"enabled\": true,\n      \"updateProfileFirstLogin\": \"true\",\n      \"storeToken\": \"true\",\n      \"trustEmail\": true,\n      \"addReadTokenRoleOnCreate\": true,\n      \"config\": {\n        \"hideOnLoginPage\": \"${HIDE_GOOGLE_BTN}\",\n        \"clientSecret\": \"${GOOGLE_OAUTH_CLIENT_SECRET}\",\n        \"clientId\": \"${GOOGLE_OAUTH_CLIENT_ID}\",\n        \"defaultScope\": \"openid profile email https://www.googleapis.com/auth/gmail.readonly\",\n        \"useJwksUrl\": \"true\"\n      }\n    }\n  ],\n  \"identityProviderMappers\": [\n    {\n      \"name\": \"approved\",\n      \"identityProviderAlias\": \"google\",\n      \"identityProviderMapper\": \"hardcoded-attribute-idp-mapper\",\n      \"config\": {\n        \"attribute.value\": \"true\",\n        \"attribute\": \"approved\"\n      }\n    }\n  ]\n}"
+    }
+  }, {
+    "apiVersion" : "extensions/v1beta1",
+    "kind" : "Deployment",
+    "metadata" : {
+      "annotations" : {
+        "configmap.fabric8.io/update-on-change" : "keycloak",
+        "fabric8.io/target-platform" : "kubernetes",
+        "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+        "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak&var-version=1.0-SNAPSHOT",
+        "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+        "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak",
+        "fabric8.io/git-branch" : "master",
+        "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+        "fabric8.io/scm-tag" : "app-console-2.0.1"
+      },
+      "labels" : {
+        "app" : "keycloak",
+        "provider" : "fabric8",
+        "version" : "1.0-SNAPSHOT",
+        "group" : "io.clarksnut.platform.apps"
+      },
+      "name" : "keycloak"
+    },
+    "spec" : {
+      "replicas" : 1,
+      "revisionHistoryLimit" : 2,
+      "selector" : {
+        "matchLabels" : {
+          "app" : "keycloak",
+          "provider" : "fabric8",
+          "group" : "io.clarksnut.platform.apps"
+        }
+      },
+      "strategy" : {
+        "type" : "Recreate"
+      },
+      "template" : {
+        "metadata" : {
+          "annotations" : {
+            "fabric8.io/git-commit" : "40eae4ef1109d880c1e5b885a5bfddd6c784cbea",
+            "pod.beta.kubernetes.io/init-containers" : "[\n{\n  \"name\": \"envvar-substitution\",\n  \"image\": \"fabric8/envsubst-file:1.0.0\",\n  \"imagePullPolicy\": \"IfNotPresent\",\n  \"args\": [\n    \"clarksnut-realm.json\"\n  ],\n  \"env\": [{\n    \"name\": \"AUTH_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"auth.api.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"CLARKSNUT_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"clarksnut.api.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"JENKINS_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"jenkins.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"keycloak.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"CLARKSNUTUI_URL\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"clarksnutui.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_PRIVATEKEY\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.private.key\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_PUBLICKEY\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.public.key\"\n            }\n        }\n  },\n  {\n    \"name\": \"KEYCLOAK_CLIENTID_SECRET\",\n    \"valueFrom\": {\n            \"secretKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"kc.clientid.secret\"\n            }\n        }\n  },\n  {\n    \"name\": \"K8S_API_SERVER\",\n    \"valueFrom\": {\n            \"configMapKeyRef\": {\n                \"name\": \"keycloak\",\n                \"key\": \"apiserver.url\"\n            }\n        }\n  },\n  {\n    \"name\": \"HIDE_OPENSHIFT_BTN\",\n    \"value\": \"true\"\n  },\n  {\n    \"name\": \"HIDE_GITHUB_BTN\",\n    \"value\": \"false\"\n  }],\n  \"volumeMounts\": [\n  {\n    \"name\": \"keycloak-config\",\n    \"mountPath\": \"/workdir/clarksnut-realm.json\",\n    \"subPath\": \"config/clarksnut-realm.json\"\n  },\n  {\n    \"name\": \"keycloak-subst-config\",\n    \"mountPath\": \"/processed\"\n  }\n  ]\n},\n{\n    \"name\": \"init-dependencyservice\",\n    \"image\": \"fabric8/fabric8-dependency-wait-service:v6632df1\",\n    \"imagePullPolicy\": \"IfNotPresent\",\n    \"command\": [\"sh\", \"-c\", \"fabric8-dependency-wait-service-linux-amd64 postgres://keycloak@keycloak-db:5432\"],\n    \"env\": [{\n      \"name\": \"DEPENDENCY_POLL_INTERVAL\",\n      \"value\": \"1\"\n    }, {\n      \"name\": \"DEPENDENCY_LOG_VERBOSE\",\n      \"value\": \"true\"\n    }]\n}]",
+            "fabric8.io/metrics-path" : "dashboard/file/kubernetes-pods.json/?var-project=keycloak&var-version=1.0-SNAPSHOT",
+            "fabric8.io/scm-con-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+            "fabric8.io/scm-url" : "http://github.com/wolsnut4/easydebt-platform/apps/keycloak",
+            "configmap.fabric8.io/update-on-change" : "keycloak",
+            "fabric8.io/target-platform" : "kubernetes",
+            "fabric8.io/git-branch" : "master",
+            "fabric8.io/scm-devcon-url" : "scm:git:git@github.com:wolsnut4/easydebt-platform.git/apps/keycloak",
+            "fabric8.io/scm-tag" : "app-console-2.0.1"
+          },
+          "labels" : {
+            "app" : "keycloak",
+            "provider" : "fabric8",
+            "version" : "1.0-SNAPSHOT",
+            "group" : "io.clarksnut.platform.apps"
+          }
+        },
+        "spec" : {
+          "containers" : [ {
+            "args" : [ "-b $(INTERNAL_POD_IP)", "-Djgroups.bind_addr=global", "-Djboss.node.name=$(INTERNAL_POD_IP)", "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=singleFile", "-Dkeycloak.migration.file=/opt/jboss/keycloak/standalone/configuration/import/clarksnut-realm.json", "-Dkeycloak.migration.strategy=IGNORE_EXISTING" ],
+            "env" : [ {
+              "name" : "POSTGRES_HOSTNAME",
+              "value" : "keycloak-db"
+            }, {
+              "name" : "POSTGRES_USER",
+              "value" : "keycloak"
+            }, {
+              "name" : "POSTGRES_PASSWORD",
+              "value" : "keycloak"
+            }, {
+              "name" : "OPERATING_MODE",
+              "value" : "standalone"
+            }, {
+              "name" : "POSTGRES_PORT_5432_TCP_ADDR",
+              "value" : "keycloak-db"
+            }, {
+              "name" : "INTERNAL_POD_IP",
+              "valueFrom" : {
+                "fieldRef" : {
+                  "fieldPath" : "status.podIP"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_USER",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.user",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PASSWORD",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.password",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_CLIENTID_SECRET",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.clientid.secret",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PRIVATEKEY",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.private.key",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "KEYCLOAK_PUBLICKEY",
+              "valueFrom" : {
+                "secretKeyRef" : {
+                  "key" : "kc.public.key",
+                  "name" : "keycloak"
+                }
+              }
+            }, {
+              "name" : "HIDE_GOOGLE_BTN",
+              "value" : "false"
+            } ],
+            "image" : "fabric8/keycloak-postgres:v15751c8",
+            "livenessProbe" : {
+              "httpGet" : {
+                "path" : "/auth",
+                "port" : 8080
+              },
+              "initialDelaySeconds" : 60,
+              "timeoutSeconds" : 10
+            },
+            "name" : "keycloak",
+            "readinessProbe" : {
+              "httpGet" : {
+                "path" : "/auth",
+                "port" : 8080
+              },
+              "initialDelaySeconds" : 10,
+              "timeoutSeconds" : 10
+            },
+            "volumeMounts" : [ {
+              "mountPath" : "/opt/jboss/keycloak/standalone/configuration/import",
+              "name" : "keycloak-subst-config"
+            }, {
+              "mountPath" : "/opt/jboss/keycloak/themes/clarksnut",
+              "name" : "keycloak-theme"
+            } ]
+          } ],
+          "volumes" : [ {
+            "emptyDir" : { },
+            "name" : "keycloak-subst-config"
+          }, {
+            "configMap" : {
+              "items" : [ {
+                "key" : "clarksnut-realm.json",
+                "path" : "config/clarksnut-realm.json"
+              } ],
+              "name" : "keycloak"
+            },
+            "name" : "keycloak-config"
+          }, {
+            "gitRepo" : {
+              "directory" : "login",
+              "repository" : "https://github.com/clarksnut/clarksnut-keycloak-theme.git"
+            },
+            "name" : "keycloak-theme"
+          } ]
+        }
+      }
+    }
+  } ]
+}
