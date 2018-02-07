@@ -1,25 +1,25 @@
 metadata:
   annotations:
     expose.config.fabric8.io/apiserver-url-key: apiserver.url
-    expose.service-key.config.fabric8.io/clarksnutui: clarksnutui.url
+    expose.service-key.config.fabric8.io/easydebtui: easydebtui.url
     expose.service-key.config.fabric8.io/keycloak: keycloak.url
     expose.service-key.config.fabric8.io/jenkins: jenkins.url
-    expose-full.service-key.config.fabric8.io/clarksnut: clarksnut.api.url
+    expose-full.service-key.config.fabric8.io/easydebt: easydebt.api.url
     expose-no-path.service-key.config.fabric8.io/auth: auth.url
 data:
   db.url: keycloak-db
   db.port: "5432"
   apiserver.url: http://kubernetes
-  clarksnutui.url: http://clarksnutui
+  easudebtui.url: http://easydebtui
   jenkins.url: http://jenkins
   keycloak.url: http://keycloak
   auth.api.url: http://auth
-  clarksnut.api.url: http://clarksnut
+  easydebt.api.url: http://easydebt
   clarksnut-realm.json: |-
     {
-      "realm": "clarksnut",
+      "realm": "easydebt",
       "enabled": true,
-      "loginTheme": "clarksnut",
+      "loginTheme": "easydebt",
       "privateKey": "${KEYCLOAK_PRIVATEKEY}",
       "publicKey": "${KEYCLOAK_PUBLICKEY}",
       "sslRequired": "external",
@@ -33,7 +33,7 @@ data:
       "accessCodeLifespan": 60,
       "clients": [
         {
-          "clientId": "clarksnut-online-platform",
+          "clientId": "easydebt-html5-client",
           "enabled": true,
           "standardFlowEnabled": true,
           "implicitFlowEnabled": false,
